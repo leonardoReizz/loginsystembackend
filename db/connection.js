@@ -3,10 +3,10 @@ require('dotenv').config();
 
 
 const con = mysql.createConnection({
-    host: process.env.MYSQL_HOST,
-    port: process.env.MYSQL_PORT,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
+    host: "189.17.218.10",
+    port: "53306",
+    user: "oltmanager",
+    password: "LIB-100-lib",
     database : 'portloginsystem'
 });
 module.exports = con
