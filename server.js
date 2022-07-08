@@ -9,7 +9,7 @@ const app = express();
 
 con.connect(function(err){
     if(err) throw new Error("MYSQL DB ERROR");
-    app.listen(5000, console.log("Server Run"));
+    app.listen(5050, console.log("Server Run"));
 })
 
 app.use(cors());
