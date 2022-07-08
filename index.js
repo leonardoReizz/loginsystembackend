@@ -9,11 +9,11 @@ const app = express();
 
 
     
-app.listen(5050, console.log("Server Run"));
 
 
 app.use(cors());
 app.use(bodyParser.json());
 
+app.listen(5050, console.log("Server Run"));
 
 
