@@ -3,11 +3,11 @@ require('dotenv').config();
 
 
 const con = mysql.createConnection({
-    host: "189.17.218.10",
-    port: "53306",
-    user: "oltmanager",
-    password: "LIB-100-lib",
-    database : 'portloginsystem'
+    host: "ec2-54-233-166-196.sa-east-1.compute.amazonaws.com",
+    port: "53010",
+    user: "root",
+    password: "pomodoro2023str",
+    database : 'loginsystem'
 });
 module.exports = con
 

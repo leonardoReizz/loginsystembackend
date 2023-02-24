@@ -1,28 +1,19 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const  con  = require("./db/connection");
-const { connect } = require("./db/connection");
-const { verify } = require("crypto");
+const con  = require("./db/connection");
 const app = express();
-
-
-
-    
-
 
 app.use(cors());
 app.use(bodyParser.json());
-
 
 app.post("/login", async (req, res) =>{
     const {email, pass} = req.body;
     let sql = `SELECT * FROM users WHERE email = '${email}' and pass = '${pass}'`;
     con.query(sql, (err, results) => {
         if(err) res.status(404).json({err});
-            return res.status(200).json(results)
+        return res.status(200).json(results)
     })
-   
 });
 
 app.post("/register", async (req, res) => {
@@ -33,7 +24,6 @@ app.post("/register", async (req, res) => {
 
     let sqlVerifyEmail = `SELECT * FROM users WHERE email = '${email}'`;
  
-   
     con.query(sqlVerifyEmail, async (err, results) =>{
         if(err) throw new Error(err)
         if(results.length <= 0){
